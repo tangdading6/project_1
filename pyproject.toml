@@ -3,7 +3,9 @@ name = "project-1"
 version = "0.1.0"
 description = "Python 3.12 project managed with uv."
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "fastapi>=0.143.3",
+]
 
 [project.scripts]
 project-1 = "project_1:main"
