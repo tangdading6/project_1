@@ -1,0 +1,4 @@
+{
+  "name": "project_1",
+  "install": "bash .cursor/install.sh"
+}
