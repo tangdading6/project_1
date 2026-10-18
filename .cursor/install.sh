@@ -18,3 +18,7 @@ sudo ln -sfn "${HOME}/.local/bin/uvx" /usr/local/bin/uvx
 
 uv python install 3.12
 uv sync --frozen
+
+if [[ -d .git ]]; then
+  git config core.hooksPath .githooks
+fi
