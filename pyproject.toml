@@ -5,6 +5,7 @@ description = "Python 3.12 project managed with uv."
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "fastapi>=0.143.3",
+    "pydantic-ai>=2.57.0",
 ]
 
 [project.scripts]
