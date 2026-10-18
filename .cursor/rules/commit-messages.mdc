@@ -18,3 +18,5 @@ Add FastAPI dependency
 ```
 
 自动生成的 `Merge ...` 提交可以保持 Git 的原文。`Co-authored-by` 这类尾注不用翻译。
+
+本机克隆后执行一次 `git config core.hooksPath .githooks`。Cloud Agent 的 `install` 会设置同一路径。主题行没有汉字时，`commit-msg` 会拒绝这次提交。
