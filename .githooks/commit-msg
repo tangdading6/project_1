@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+msg_file=$1
+subject=$(grep -vE '^[[:space:]]*(#|$)' "$msg_file" | head -n 1 || true)
+
+if [[ -z "${subject}" ]]; then
+  echo "提交说明不能为空，请使用中文描述。" >&2
+  exit 1
+fi
+
+if [[ "${subject}" =~ ^Merge[[:space:]] ]]; then
+  exit 0
+fi
+
+if ! python3 -c 'import sys; raise SystemExit(0 if any("\u4e00" <= ch <= "\u9fff" for ch in sys.argv[1]) else 1)' "${subject}"; then
+  echo "提交说明必须使用中文：${subject}" >&2
+  exit 1
+fi

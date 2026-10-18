@@ -1,0 +1,22 @@
+---
+description: 每次 git commit 的说明使用中文
+alwaysApply: true
+---
+
+# 提交说明
+
+每次 `git commit` 的说明使用中文。主题行写清楚这次改了什么，用完整句子，包含至少一个汉字。
+
+```text
+添加 FastAPI 依赖
+
+在 pyproject.toml 中声明 fastapi，并更新 uv.lock。
+```
+
+```text
+Add FastAPI dependency
+```
+
+自动生成的 `Merge ...` 提交可以保持 Git 的原文。`Co-authored-by` 这类尾注不用翻译。
+
+本机克隆后执行一次 `git config core.hooksPath .githooks`。Cloud Agent 的 `install` 会设置同一路径。主题行没有汉字时，`commit-msg` 会拒绝这次提交。
